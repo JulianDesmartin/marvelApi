@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Marvelous team</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+
+    <div class="container" id="app.js">
+         
+    </div>
+
+    <div id="myapp">
+        <h1>Marvelous team</h1>
+
+        <h2>List of heroes</h2>
+        <button v-on:click="getAllHeroes">test</button>
+
+        <ul v-for="(item,name) in marvelheroes.data">
+            <div v-if="name == 'results'">
+                <li v-for="heroes in item">
+
+                    <div v-for="img in heroes.items">
+                        <img v-bind:src="img">
+                        {{img}}
+                    </div>
+
+                    <p>{{heroes.name}}</p>
+                    <p v-if="heroes.description !== null"> {{heroes.description}}</p>
+                    <button v-if="heroes.id !== null">add to my team</button>
+                </li>
+            </div>
+            
+        </ul>
+
+        
+    </div>
+
+
+    
+    <script>
+       
+    /*
+        let myURL = "index.html"; // pour tester, indiquez un fichier en local pour éviter les problèmes de CROSS ORIGIN
+
+        let get = function(url){
+            return new Promise( (resolve) => {
+                    let xhr = new XMLHttpRequest();
+                    xhr.addEventListener('load', function(){resolve(xhr.responseText)});
+                    xhr.open('get', url);
+                    xhr.send();
+                }
+            )
+        };
+
+        function doWhatEverYouWant(r){ console.log(r) }
+
+        get( myURL )
+        .then( doWhatEverYouWant );
+
+        // alternativement, version async/await (mais ECMAScript 2017)
+        async function getAndlog(){
+            let data = await get( myURL );
+            doWhatEverYouWant(data);
+        };
+        getAndlog();
+
+        */
+    </script>
+
+
+
+ </body>
+ </html>
